@@ -1,0 +1,28 @@
+{
+  "name": "virtual-pet",
+  "version": "1.0.0",
+  "description": "Tamagotchi Virtual Pet Project ",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/antoniasymeonidou/Virtual_Pet.git"
+  },
+  "keywords": [
+    "tamagotchi",
+    "pet",
+    "virtual",
+    "friend"
+  ],
+  "author": "Antonia Symeonidou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/antoniasymeonidou/Virtual_Pet/issues"
+  },
+  "homepage": "https://github.com/antoniasymeonidou/Virtual_Pet#readme",
+  "devDependencies": {
+    "jest": "^26.0.1"
+  }
+}
