@@ -22,6 +22,7 @@ $ git clone https://github.com/antoniasymeonidou/Virtual_Pet.git
 Navigate to the project directory. Type the following:
 ```
 $ npm install
+$ npm install -D jest
 ```
 Node Package Manager (npm) should automatically start downloading all required dependencies. 
 After all files have been downloaded, type the following:
