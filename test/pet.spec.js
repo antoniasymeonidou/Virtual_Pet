@@ -75,6 +75,81 @@ describe('feed', () => {
     const pet = new Pet('creamSocks');
     pet.hunger = 3;
     pet.feed();
-    expect(pet.feed).toEqual(0);
+    expect(pet.hunger).toEqual(0);
   });
 });
+
+// check hunger and fitness levels of a pet
+describe('checkUp', () => {
+  it('checks pet', () => {
+    const pet = new Pet('creamSocks');
+    makePetOnlyHungry(pet);
+    expect(pet.checkUp()).toEqual('I am hungry');
+    makePetOnlyUnfit(pet);
+    expect(pet.checkUp()).toEqual('I need a walk');
+    makePetUnfitAndHungry(pet);
+    expect(pet.checkUp()).toEqual('I am hungry AND I need a walk');
+    makePetFitAndHealthy(pet);
+    expect(pet.checkUp()).toEqual('I feel great!');
+  })
+});
+
+const HUNGER_LIMIT = 5;
+const FITNESS_LIMIT = 3;
+function makePetOnlyHungry(pet) {
+   pet.hunger = HUNGER_LIMIT;
+   pet.fitness = FITNESS_LIMIT + 1;
+}
+
+function makePetOnlyUnfit(pet) {
+  pet.hunger = HUNGER_LIMIT - 1;
+  pet.fitness = FITNESS_LIMIT;
+}
+
+function makePetUnfitAndHungry(pet) {
+  pet.hunger = HUNGER_LIMIT;
+  pet.fitness = FITNESS_LIMIT;
+}
+
+function makePetFitAndHealthy(pet){
+  pet.hunger = HUNGER_LIMIT - 1;
+  pet.fitness = FITNESS_LIMIT + 1;
+}
+
+describe('pet is not alive', () => {
+it('error when the pet is not alive', () => {
+  const pet = new Pet('creamSocks');
+  expect(pet.isAlive()).toBe(true);
+  kill(pet);
+  expect(pet.isAlive()).toBe(false);
+  expect(dieOfLaziness().isAlive()).toBe(false);
+  expect(dieOfHunger().isAlive()).toBe(false);
+  expect(dieOfOldAge().isAlive()).toBe(false);
+
+});
+});
+
+function kill(pet){
+  pet.fitness = 0;
+  pet.hunger = 10;
+  pet.age = 30;
+}
+
+function dieOfLaziness() {
+  const pet = new Pet("creamSocks");
+  pet.fitness = 0;
+  return pet;
+}
+
+function dieOfHunger() {
+  const pet = new Pet("creamSocks");
+  pet.hunger = 10;
+  return pet;
+}
+
+function dieOfOldAge() {
+  const pet = new Pet("creamSocks");
+  pet.age = 30;
+  return pet;
+}
+
