@@ -65,7 +65,7 @@ describe('growUp', () => {
   });
 });
 
-// walk starts at 4 
+// walk starts at 4
 describe('walk', () => {
   it('increases fitness by 4', () => {
     const pet = new Pet('creamSocks');
