@@ -8,7 +8,7 @@ describe('constructor', () => {
   });
 });
 
-// age start at 0
+// set age to zero
 describe('constructor', () => {
   it('has a initial age of 0', () => {
     const pet = new Pet('creamSocks');
@@ -57,6 +57,12 @@ describe('growUp', () => {
     pet.growUp();
     expect(pet.fitness).toEqual(13);
   });
+
+  it('throws an error if the pet is not alive', () => {
+    const pet = new Pet('creamSocks');
+    pet.age = 30;
+    expect(pet.feed).toThrow('Your pet is no longer alive');
+  });
 });
 
 // walk starts at 4 
@@ -67,6 +73,12 @@ describe('walk', () => {
     pet.walk();
     expect(pet.fitness).toEqual(8);
   });
+
+  it('throws an error if the pet is not alive', () => {
+    const pet = new Pet('creamSocks');
+    pet.age = 30;
+    expect(pet.feed).toThrow('Your pet is no longer alive');
+  });
 });
 
 // decrease hunger by 3
@@ -76,6 +88,12 @@ describe('feed', () => {
     pet.hunger = 3;
     pet.feed();
     expect(pet.hunger).toEqual(0);
+  });
+
+  it('throws an error if the pet is not alive', () => {
+    const pet = new Pet('creamSocks');
+    pet.age = 30;
+    expect(pet.feed).toThrow('Your pet is no longer alive');
   });
 });
 
@@ -91,7 +109,12 @@ describe('checkUp', () => {
     expect(pet.checkUp()).toEqual('I am hungry AND I need a walk');
     makePetFitAndHealthy(pet);
     expect(pet.checkUp()).toEqual('I feel great!');
-  })
+  });
+  it('throws an error if the pet is not alive', () => {
+    const pet = new Pet('creamSocks');
+    pet.age = 30;
+    expect(pet.feed).toThrow('Your pet is no longer alive');
+  });
 });
 
 const HUNGER_LIMIT = 5;
@@ -152,4 +175,3 @@ function dieOfOldAge() {
   pet.age = 30;
   return pet;
 }
-

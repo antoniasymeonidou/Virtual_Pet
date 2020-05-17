@@ -16,6 +16,9 @@ function Pet (name) {
 When a pet grows up, hunger and fitness increase
 */
 Pet.prototype.growUp = function () {
+  if (!this.isAlive) {
+    throw new Error('Your pet is no longer alive :(');
+  }
   this.age += 1
   this.hunger += HUNGRY 
   this.fitness += FIT 
@@ -23,6 +26,9 @@ Pet.prototype.growUp = function () {
 
 Pet.prototype.walk = function () {
   const maxFitness = 10
+  if (!this.isAlive) {
+    throw new Error('Your pet is no longer alive :(');
+  }
   if ((this.fitness + 4) <= 10) {
     this.fitness += 4
   } else {
@@ -32,14 +38,20 @@ Pet.prototype.walk = function () {
 
 Pet.prototype.feed = function () {
   const minHunger = 0
-  if ((this.hunger - 3) >= 0) {
+  if (!this.isAlive) {
+    throw new Error('Your pet is no longer alive');
+  }
+    if ((this.hunger - 3) >= 0) {
     this.hunger -= 3
   } else {
-    this.hunger = minHunger 
+    this.hunger = minHunger;
   }
 }
 
 Pet.prototype.checkUp = function () {
+  if (!this.isAlive) {
+    throw new Error('Your pet is no longer alive :(');
+  }
   if ((this.hunger >= HUNGRY) && (this.fitness <= FIT)) {
     return 'I am hungry AND I need a walk';
   } else if (this.hunger >= HUNGRY) {
@@ -56,9 +68,5 @@ Pet.prototype.isAlive = function (){
            this.hunger < STARVATION && 
            this.age < AGE_OF_DEATH ;
 }
-
-if (!this.isAlive) {
-    throw new Error('Your pet is no longer alive');
-  }
 
 module.exports = Pet;
