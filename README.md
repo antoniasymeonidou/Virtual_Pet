@@ -6,9 +6,9 @@ The Tamagotchi (たまごっち) is a virtual pet, created in Japan by Akihiro Y
 ## Badges
 
 ![dev](https://img.shields.io/david/dev/antoniasymeonidou/Virtual_Pet)
-![pull requests](https://img.shields.io/bitbucket/pr-raw/antoniasymeonidou/Virtual_Pet)
-![licence](https://img.shields.io/npm/l/express)
-![followers](https://img.shields.io/github/followers/antoniasymeonidou?label=Follow&style=social)
+[![pull requests](https://img.shields.io/github/issues-pr/antoniasymeonidou/Virtual_Pet)](https://github.com/antoniasymeonidou/Virtual_Pet/pulls)
+[![GitHub license](https://img.shields.io/github/license/antoniasymeonidou/Virtual_Pet.svg)](https://github.com/antoniasymeonidou/Virtual_Pet/blob/master/LICENSE)
+[![followers](https://img.shields.io/github/followers/antoniasymeonidou?label=Follow&style=social)](https://github.com/antoniasymeonidou)
 
 ## Visuals
 
@@ -68,7 +68,7 @@ JavaScript, CSS, HTML
 
 ## License
 
-[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
+[![GitHub license](https://img.shields.io/github/license/antoniasymeonidou/Virtual_Pet.svg)](https://github.com/antoniasymeonidou/Virtual_Pet/blob/master/LICENSE)
 
 - **[MIT license](http://opensource.org/licenses/mit-license.php)**
 - Copyright 2015 © <a href="https://github.com/antoniasymeonidou">Nanou</a>.
