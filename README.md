@@ -6,7 +6,7 @@ The Tamagotchi (たまごっち) is a virtual pet, created in Japan by Akihiro Y
 ## Badges
 
 ![dev](https://img.shields.io/david/dev/antoniasymeonidou/Virtual_Pet)
-![pull requests](https://img.shields.io/bitbucket/pr-raw/antoniasymeonidou/Virtual_Pet)
+[![pull requests](https://img.shields.io/github/issues-pr/antoniasymeonidou/Virtual_Pet)](https://github.com/antoniasymeonidou/Virtual_Pet/pulls)
 ![licence](https://img.shields.io/npm/l/express)
 ![followers](https://img.shields.io/github/followers/antoniasymeonidou?label=Follow&style=social)
 
